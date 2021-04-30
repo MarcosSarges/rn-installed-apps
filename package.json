@@ -1,6 +1,6 @@
 {
   "name": "rn-installed-apps",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "This lib serves to get the list of apps installed on the android device",
   "homepage": "https://github.com/MarcosSarges/rn-installed-apps",
   "main": "index.js",
