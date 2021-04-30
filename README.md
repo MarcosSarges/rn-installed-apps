@@ -8,7 +8,15 @@ This library will return all applications with in Android device
 
 ### Mostly automatic installation
 
-`No additional steps needed`
+Adding in `AndroidManifest.xml`
+
+```xml
+<queries>
+   <intent>
+      <action android:name="android.intent.action.MAIN" />
+   </intent>
+</queries>
+```
 
 ### Manual installation
 
