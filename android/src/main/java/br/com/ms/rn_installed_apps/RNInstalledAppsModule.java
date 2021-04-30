@@ -5,6 +5,8 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.Promise;
+import com.facebook.react.bridge.WritableArray;
+import com.facebook.react.bridge.WritableNativeArray;
 
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
@@ -36,11 +38,10 @@ public class RNInstalledAppsModule extends ReactContextBaseJavaModule {
         try {
             PackageManager pm = reactContext.getPackageManager();
             List<ApplicationInfo> packages = pm.getInstalledApplications(PackageManager.GET_META_DATA);
-            ArrayList<AppInstalled> appsInstalled = new ArrayList<>();
+            WritableArray appsInstalled = new WritableNativeArray();
 
             for (ApplicationInfo applicationInfo : packages) {
-                AppInstalled app = new AppInstalled(applicationInfo.packageName);
-                appsInstalled.add(app);
+                appsInstalled.pushString(applicationInfo.packageName);
             }
             promise.resolve(appsInstalled);
         } catch (Exception e) {

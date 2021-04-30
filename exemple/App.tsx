@@ -58,9 +58,7 @@ const App = () => {
         renderItem={({item}) => {
           return (
             <View style={styles.view}>
-              <Text>{item.packageName}</Text>
-              <Text>{item.permissionName}</Text>
-              <Text>{item.granted}</Text>
+              <Text>{item}</Text>
             </View>
           );
         }}
