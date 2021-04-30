@@ -31,10 +31,10 @@ This library will return all applications with in Android device
 
 ## Usage
 
-```javascript
+```js
 import RNInstalledApps from "rn-installed-apps";
 
-RNInstalledApps.getAllPermissions().then((data) => {
+RNInstalledApps.getAllApps().then((data) => {
   console.log(data);
 });
 ```
